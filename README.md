@@ -4,7 +4,7 @@ This repository contains a mini-project in which a logistic regression model was
 
 ## Author
 
-Daniel Ramón Murillo Antuna: [@dan-murillo](https://github.com/dan-murillo)
+Daniel R. Murillo Antuna: [@dan-murillo](https://github.com/dan-murillo)
 
 ## Overview of the Analysis
 
