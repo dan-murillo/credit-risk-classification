@@ -2,6 +2,9 @@
 
 This repository contains a mini-project in a model based on loan risk was trained and evaluated in order to determine whether a customer
 
+machine learning model
+
+
 ## Author
 
 Daniel Ramón Murillo Antuna: [@dan-murillo](https://github.com/dan-murillo)
@@ -25,10 +28,12 @@ Daniel Ramón Murillo Antuna: [@dan-murillo](https://github.com/dan-murillo)
 
 ### How the analysis was conducted:
 
+Standard training and testing (75% vs 25% of the data respectively)
 
 
 ### Improvements for future analyses:
-
+Could stratify the model by 'healthy loans' and 'high-risk loans' to deal with the imbalance without the need to oversample the latter type of loans.
+After implementing this model, it will require frequent model maintenance to verify if the model is still behaving as expected.
 
 
 Contents of the repository:
