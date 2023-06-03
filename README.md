@@ -1,47 +1,47 @@
 # Predicting credit risk classification with Machine Learning (*Challenge 20*)
 
-This repository contains a mini-project in a model based on loan risk was trained and evaluated in order to determine whether a customer
-
-machine learning model
-
+This repository contains a mini-project in which a logistic regression model was trained and tested to classify loan risk.
 
 ## Author
 
 Daniel Ramón Murillo Antuna: [@dan-murillo](https://github.com/dan-murillo)
 
-## Repository and project description
+## Overview of the Analysis
+
+In this repository you will find how a supervised learning Machine Learning model was applied on loan risk. The purpose of the analysis was to train and test a logistic regression model that could correctly classify good or 'healthy' loans and bad or 'high-risk' loans. The independent variables (or features) that the model was fed were the size of the loan, the interest rate, the income of the borrower, the debt-to-income ratio, the number of accounts of the borrower, the derogatory marks of the borrower, and their total debt. The labels that the model was trained to predict were 'healthy loan' (or 0) and 'high-risk loan' (or 1). There were 77536 observations altogether. 3.2% of them were 1's and the rest were 0's.
+
+The analysis went through three different stages. In the first stage, the data were loaded with ```Pandas``` and ```Numpy``` from a CSV file, the labels and the features were created, the balance of both types of variables was checked, and the data were split into training and testing with the ```train_test_split``` module of ```Scikit-learn```. During the second stage, both the training and the testing data were scaled with the ```StandardScaler``` module of ```Scikit-learn``` in order to standardise the features. Then, the training data were fit into the classifier ```LogisticRegression```from ```Scikit-learn```; once trained, the model was used to make predictions using the testing data, and the performance of the model was evaluated. The training data represented 75% of the observations while the testing data were the other 25%. In the final stage, the data of the 'high-risk loans' were oversampled with the ```RandomOverSampler``` module of ```Imbalanced-learn``` in order to balance the observations of both types of loans, and the resampled data went through the same steps as in the second stage. 
 
 
-### Study's purpose:
+## Results
 
+Machine Learning Model 1 (Logistic Regression):
+- Since the data of the target variable were highly imbalanced, the F1 scores were interpreted instead of the accuracy score. The model is as accurate as it can be for classifying 'healthy loans' and very accurate for 'high-risk loans' —based on the F1 scores, which are 100% and 91% respectively.
+- The classifications made by the model are very likely correct because the precision scores are very high —100% for 0's and 84% for 1's.
+- The model correctly finds nearly all the true 'high-risk loans' there are, as the recall scores were extremely high too —99% for 0's and 98% for 1's.
 
-### Summary of the study's conclusions:
+Machine Learning Model 2 (Oversampled 'high-risk loans' Logistic Regression):
+- The model works very well to classify both 'healthy loans' and 'high-risk loans', as it is 99% accurate.
+- The classifications made by the model are very likely correct because the precision scores are very high —100% for 0's and 83% for 1's.
+- This model also correctly finds nearly all the true 'high-risk loans' there are, as the recall score was extremely high: 99%.
 
-1. 
-2.
-3. 
-4. 
+## Summary
 
-### Study conclusions explained with the results of the analysis:
+The Machine Learning Model 2 is better than the first one due to the oversampling of the 'high-risk loans'. That improved the performance of the logistic regression model and made it the safest to make decisions on that type of loans.
 
+The goal of both Machine Learning Models was to classify the right loans into the right categories. However, correctly classifying 'high-risk loans' should be given priority over correctly classifying 'healthy loans' because mis-classifying a 'high-risk loan' as a 'healthy loan' would incur in much higher costs than mis-classifying a 'healthy loan' as a 'high-risk loan'. Based on this logic, not only is the second model more accurate than the first one, but also it better predicts 'high-risk loans' than the first model. This was mainly determined by the 'high-risk loans' recall scores of the models —the second model had a score of 99%, while the first one had a score of 98%.
 
+A more detailed explanation can be found in the *credit_risk_classification* Jupyter Notebook located in the 'Credit_Risk' folder of this repository.
 
-### How the analysis was conducted:
+## Improvements for future analyses
 
-Standard training and testing (75% vs 25% of the data respectively)
+Future analyses could stratify the first model by 'healthy loans' and 'high-risk loans' to deal with the imbalance without the need to oversample the latter type of loans. Also, it is important to mention that either model would require frequent maintenance after its implementation in order to verify if it is still behaving as expected.
 
-
-### Improvements for future analyses:
-Could stratify the model by 'healthy loans' and 'high-risk loans' to deal with the imbalance without the need to oversample the latter type of loans.
-After implementing this model, it will require frequent model maintenance to verify if the model is still behaving as expected.
-
-
-Contents of the repository:
+## Contents of the repository
 
 ### The *Credit_Risk* folder:
 
-It contains a Jupyter Notebook with the Python code of my analysis.
-
+It contains a Jupyter Notebook with the Python code of my analysis and a CSV file with the data that was used.
 
 ## Data Reference
 
